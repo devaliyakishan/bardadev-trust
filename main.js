@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loop: true,
     effect: "fade",
     autoplay: { delay: 4000, disableOnInteraction: false },
-    pagination: { el: ".swiper-pagination", clickable: true },
+    pagination: { el: ".swiper-pagination", clickable: true, type: "bullets" },
   });
 
   // Animate On Scroll
@@ -125,13 +125,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 800); 
     }
   });
-});
 
+  // Video modal functionality
   const modal = document.getElementById('videoModal');
   const videoPlayer = document.getElementById('historyVideoPlayer');
   const videoContainer = document.getElementById('videoContainer');
 
-  function openHistoryVideo() {
+  window.openHistoryVideo = function() {
+    if (!modal || !videoPlayer || !videoContainer) return;
+    
     // Show modal
     modal.classList.remove('hidden');
     modal.classList.add('flex');
@@ -145,9 +147,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Play the video with sound!
     videoPlayer.play();
-  }
+  };
 
-  function closeHistoryVideo() {
+  window.closeHistoryVideo = function() {
+    if (!modal || !videoPlayer || !videoContainer) return;
+    
     // Animate out
     modal.classList.add('opacity-0');
     videoContainer.classList.remove('scale-100');
@@ -162,11 +166,14 @@ document.addEventListener("DOMContentLoaded", function () {
       videoPlayer.pause();
       videoPlayer.currentTime = 0;
     }, 300);
-  }
+  };
 
   // Close modal if user clicks outside the video
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-      closeHistoryVideo();
-    }
-  });
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        window.closeHistoryVideo();
+      }
+    });
+  }
+});

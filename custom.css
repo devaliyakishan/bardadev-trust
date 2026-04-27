@@ -1,0 +1,176 @@
+/* ============================================
+   CUSTOM CSS - Only what Tailwind cannot do
+   ============================================ */
+
+/* Hero slide styles */
+.hero-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(45, 15, 17, 0.25) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  position: absolute;
+  inset: 0;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar { width: 5px; }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #D97706, #4A1D1F);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-track { background: #FEF4E0; }
+
+/* Menu bar for hamburger */
+.menu-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #334155;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile menu positioning */
+#mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 40;
+}
+
+/* `sticky` on <header> already creates a positioning context for the absolute mobile menu — no override needed */
+
+/* Nav link animated underline — excludes logo links */
+header div a[href^="#"]:not(.logo-link) {
+  position: relative;
+  padding-bottom: 2px;
+}
+header div a[href^="#"]:not(.logo-link)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1.5px;
+  background: #D97706;
+  transition: width 0.28s ease;
+  border-radius: 2px;
+}
+header div a[href^="#"]:not(.logo-link):hover::after { width: 100%; }
+
+/* Swiper 11 pagination — set via CSS variables (Swiper reads these internally) */
+.heroSwiper {
+  --swiper-pagination-color: #D97706;
+  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-height: 12px;
+  --swiper-pagination-bullet-border-radius: 50%;
+  --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.6);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
+}
+.heroSwiper .swiper-pagination {
+  position: absolute !important;
+  bottom: 20px !important;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+}
+.heroSwiper .swiper-pagination-bullet {
+  display: inline-block !important;
+  width: var(--swiper-pagination-bullet-width, 12px) !important;
+  height: var(--swiper-pagination-bullet-height, 12px) !important;
+  border-radius: 50% !important;
+  background: var(--swiper-pagination-bullet-inactive-color) !important;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity) !important;
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 6px) !important;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.heroSwiper .swiper-pagination-bullet-active {
+  background: var(--swiper-pagination-color, #D97706) !important;
+  transform: scale(1.3);
+}
+
+/* Oval frame glow on hover */
+.group:hover .oval-frame {
+  box-shadow:
+    0 0 0 3px rgba(217, 119, 6, 0.7),
+    0 0 0 7px rgba(217, 119, 6, 0.18),
+    0 20px 50px rgba(74, 29, 31, 0.35);
+  transition: box-shadow 0.4s ease;
+}
+
+/* Flipbook styles */
+.flip-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  min-height: unset;
+}
+.page {
+  background-color: white;
+  overflow: hidden;
+  display: block;
+}
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  user-select: none;
+  pointer-events: none;
+}
+#kankotri-scroll-wrapper {
+  position: relative;
+  height: 500vh;
+}
+@media (max-width: 768px) {
+  #kankotri-scroll-wrapper {
+    height: 300vh;
+  }
+}
+#kankotri-book {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+#flip-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(to right, #D97706, #4A1D1F);
+  width: 0%;
+  transition: width 0.25s ease;
+  z-index: 10;
+}
+#flip-scroll-hint { transition: opacity 0.5s ease; }
+
+/* Schedule day cards shimmer animation */
+.border-t-4.border-\[\#D97706\]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(217,119,6,0.5), transparent);
+  animation: shimmer 3s infinite;
+}
+@keyframes shimmer {
+  to { left: 100%; }
+}

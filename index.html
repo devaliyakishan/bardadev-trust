@@ -6,106 +6,93 @@
     <title>શ્રી બરડાદેવ દેવળીયા પરિવાર | મૂર્તિ પ્રાણપ્રતિષ્ઠા મહોત્સવ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./custom.css" />
   </head>
-  <body class="custom-scrollbar text-slate-800">
-    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+  <body class="custom-scrollbar text-slate-800 font-serif" style="font-family: 'Gujarati Sangam MN', 'Shruti', serif;">
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
       <!-- Desktop nav -->
-      <div
-        class="container mx-auto px-6 py-2 text-sm tracking-wide font-bold text-slate-700 hidden md:grid items-center"
-        style="grid-template-columns: 1fr auto 1fr;"
-      >
-        <div class="flex items-center">
-          <a href="#home" class="hover:text-[#D97706] transition mx-4 uppercase">હોમ</a>
-          <a href="#schedule" class="hover:text-[#D97706] transition mx-4 uppercase">કાર્યક્રમ</a>
+      <div class="container mx-auto px-4 sm:px-6 py-1 text-xs sm:text-sm tracking-wide font-bold text-slate-700 hidden md:flex items-center justify-between">
+        <div class="flex items-center gap-2 sm:gap-4">
+          <a href="#home" class="hover:text-[#D97706] transition uppercase text-xs sm:text-sm">હોમ</a>
+          <a href="#schedule" class="hover:text-[#D97706] transition uppercase text-xs sm:text-sm">કાર્યક્રમ</a>
         </div>
-
-        <div class="logo-center">
-          <a href="#home">
-            <img src="./images/logo.png" alt="Jay Bardadev" class="h-14 w-auto drop-shadow" />
+        <div class="flex justify-center items-center">
+          <a href="#home" class="logo-link">
+            <img src="./images/logo.png" alt="Jay Bardadev" class="h-10 sm:h-12 md:h-14 w-auto drop-shadow" />
           </a>
         </div>
-
-        <div class="flex items-center justify-end">
-          <a href="#cultural" class="hover:text-[#D97706] transition mx-4 uppercase">સાંસ્કૃતિક</a>
-          <a href="#donation" class="hover:text-[#D97706] transition mx-4 uppercase">અનુદાન</a>
-          <a href="committee.html" class="hover:text-[#D97706] transition mx-4 uppercase">ટ્રસ્ટી મંડળ</a>
+        <div class="flex items-center gap-2 sm:gap-4">
+          <a href="#cultural" class="hover:text-[#D97706] transition uppercase text-xs sm:text-sm">સાંસ્કૃતિક</a>
+          <a href="#donation" class="hover:text-[#D97706] transition uppercase text-xs sm:text-sm">અનુદાન</a>
+          <a href="committee.html" class="hover:text-[#D97706] transition uppercase text-xs sm:text-sm">ટ્રસ્ટી મંડળ</a>
         </div>
       </div>
-
       <!-- Mobile top bar -->
-      <div class="md:hidden flex items-center justify-between px-5 py-2">
+      <div class="md:hidden flex items-center justify-between px-3 sm:px-5 py-2">
         <div class="w-8"></div>
-        <a href="#home">
-          <img src="./images/logo.png" alt="Jay Bardadev" class="h-11 w-auto" />
+        <a href="#home" class="logo-link flex-shrink-0">
+          <img src="./images/logo.png" alt="Jay Bardadev" class="h-9 sm:h-11 w-auto" />
         </a>
         <button id="mobile-menu-btn" aria-label="Toggle menu"
-          class="w-8 h-8 flex flex-col justify-center items-center gap-[5px] focus:outline-none">
+          class="w-8 h-8 sm:w-10 sm:h-10 flex flex-col justify-center items-center gap-[5px] focus:outline-none">
           <span class="menu-bar"></span>
           <span class="menu-bar"></span>
           <span class="menu-bar"></span>
         </button>
       </div>
-
       <!-- Mobile dropdown -->
       <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-md">
-        <div class="flex flex-col px-6 py-5 gap-5 text-sm font-bold tracking-widest text-slate-700 uppercase">
-          <a href="#home" class="hover:text-[#D97706] transition">હોમ</a>
-          <a href="#schedule" class="hover:text-[#D97706] transition">કાર્યક્રમ</a>
-          <a href="#cultural" class="hover:text-[#D97706] transition">સાંસ્કૃતિક</a>
-          <a href="#donation" class="hover:text-[#D97706] transition">અનુદાન</a>
-          <a href="#trust" class="hover:text-[#D97706] transition">ટ્રસ્ટી મંડળ</a>
+        <div class="flex flex-col px-4 sm:px-6 py-4 sm:py-5 gap-3 sm:gap-4 text-xs sm:text-sm font-bold tracking-widest text-slate-700 uppercase">
+          <a href="#home" class="hover:text-[#D97706] transition py-2 border-b border-slate-100">હોમ</a>
+          <a href="#schedule" class="hover:text-[#D97706] transition py-2 border-b border-slate-100">કાર્યક્રમ</a>
+          <a href="#cultural" class="hover:text-[#D97706] transition py-2 border-b border-slate-100">સાંસ્કૃતિક</a>
+          <a href="#donation" class="hover:text-[#D97706] transition py-2 border-b border-slate-100">અનુદાન</a>
+          <a href="#trust" class="hover:text-[#D97706] transition py-2">ટ્રસ્ટી મંડળ</a>
         </div>
       </nav>
-
     </header>
-    <section id="home" class="swiper heroSwiper pt-16 md:pt-20">
+    <section id="home" class="swiper heroSwiper">
       <div class="swiper-wrapper">
         <div
-          class="swiper-slide hero-slide"
+          class="swiper-slide hero-slide h-[60vh] sm:h-[70vh] md:h-[90vh]"
           style="background-image: url(./images/banner2.png)"
         >
           <div class="hero-overlay"></div>
           <div
-            class="relative text-center text-white p-6"
+            class="relative text-center text-white p-4 sm:p-6"
             data-aos="zoom-in"
             data-aos-duration="1500"
           >
-            <h2
-              class="text-xl md:text-2xl mb-4 font-bold tracking-widest text-[#D97706]"
-            >
+            <h2 class="text-sm sm:text-base md:text-xl lg:text-2xl mb-2 sm:mb-4 font-bold tracking-widest text-[#D97706]">
               શ્રી બરડાદેવ દેવળીયા પરિવાર ટ્રસ્ટ, સુત્રાપાડા
             </h2>
-            <h2 class="text-2xl mb-4 font-bold tracking-widest text-[#D97706]">
+            <h2 class="text-base sm:text-lg md:text-2xl mb-2 sm:mb-4 font-bold tracking-widest text-[#D97706]">
               મહંત શ્રી પોપટબાપા ના આશીર્વાદ સાથે
             </h2>
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-6">
               શ્રી રામચંદ્ર દરબાર તથા શ્રી શિવ કૈલાસધામ
             </h1>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold mb-3 sm:mb-6">
               મૂર્તિ પ્રાણપ્રતિષ્ઠા મહોત્સવ
             </h1>
             <p
-              class="text-xl md:text-2xl font-bold bg-[#D97706] inline-block px-8 py-2 rounded-full"
+              class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold bg-[#D97706] inline-block px-4 sm:px-6 md:px-8 py-2 rounded-full mb-2"
             >
               ૧૧, ૧૨ અને ૧૩ મે, ૨૦૨૬
             </p>
-            <p class="text-xl font-bold bg-[#D97706] inline-block px-6 py-2 rounded-full text-white ml-auto">
+            <p class="text-base sm:text-lg md:text-xl font-bold bg-[#D97706] inline-block px-4 sm:px-6 py-2 rounded-full text-white">
               સ્થળ: મુ. સુત્રાપાડા, જિ. ગીર સોમનાથ
             </p>
           </div>
         </div>
         <div
-          class="swiper-slide hero-slide"
+          class="swiper-slide hero-slide h-[60vh] sm:h-[70vh] md:h-[90vh]"
           style="background-image: url('./images/banner3.png');"
         >
           <div class="hero-overlay"></div>
-          <div class="absolute bottom-0 left-0 w-full text-white p-6">
-            <h1 class="text-3xl md:text-6xl font-bold mb-4">
+          <div class="absolute bottom-0 left-0 w-full text-white p-4 sm:p-6">
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-6xl font-bold mb-4">
               ચામુંડા માતા -- શ્રી બરડાદેવ બાપા -- સતી માં -- લાખી માં -- વિરમ બાપા
             </h1>            
           </div>
@@ -113,45 +100,44 @@
       </div>
       <div class="swiper-pagination"></div>
     </section>
-    <section class="pt-16 pb-12 bg-[#FFFDFB] relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-
+    <section class="pt-8 sm:pt-12 md:pt-16 pb-8 sm:pb-10 md:pb-12 bg-[#FFFDFB] relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
             <div class="text-center mb-12" data-aos="fade-up">
                 <span class="text-[#D97706] font-bold tracking-[0.2em] uppercase text-sm mb-3 block">પરમ કૃપા</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-[#4A1D1F] relative inline-block">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#4A1D1F] relative inline-block pb-8">
                     અમર પાવન નિશ્રામાં
-                    <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#D97706]"></div>
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#D97706]"></div>
                 </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto items-end">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto items-end">
                 
                 <div class="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-64 h-80 p-2 bg-gradient-to-b from-[#D97706] to-[#4A1D1F] oval-frame transition-transform duration-500 group-hover:-translate-y-3">
+                    <div class="w-48 h-64 sm:w-56 sm:h-72 md:w-64 md:h-80 p-2 bg-gradient-to-b from-[#D97706] to-[#4A1D1F] oval-frame transition-transform duration-500 group-hover:-translate-y-3">
                         <img src="./images/arajanbapu.png" alt="શ્રી રામ દરબાર" class="w-full h-full object-cover oval-frame border-4 border-white" onerror="this.src='https://placehold.co/400x500/FDF5F2/4A1D1F?text=શ્રી+રામ+દરબાર'">
                     </div>
-                    <h3 class="text-2xl font-bold text-[#4A1D1F] mt-8 text-center">શ્રી રામ દરબાર</h3>
-                    <p class="text-[#D97706] text-sm mt-2 font-bold tracking-widest">પ્રાણપ્રતિષ્ઠા મૂર્તિ</p>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-[#4A1D1F] mt-4 sm:mt-6 md:mt-8 text-center">શ્રી રામ દરબાર</h3>
+                    <p class="text-[#D97706] text-xs sm:text-sm mt-2 font-bold tracking-widest">પ્રાણપ્રતિષ્ઠા મૂર્તિ</p>
                 </div>
 
                 <div class="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-72 h-96 p-2 bg-gradient-to-b from-[#D97706] to-[#4A1D1F] oval-frame transition-transform duration-500 group-hover:-translate-y-3">
+                    <div class="w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-96 p-2 bg-gradient-to-b from-[#D97706] to-[#4A1D1F] oval-frame transition-transform duration-500 group-hover:-translate-y-3">
                         <img src="./images/nagbapa.png" alt="શ્રી બરડાદેવ બાપા" class="w-full h-full object-cover oval-frame border-4 border-white" onerror="this.src='https://placehold.co/400x600/FDF5F2/4A1D1F?text=શ્રી+બરડાદેવ+બાપા'">
                     </div>
-                    <h3 class="text-3xl font-bold text-[#4A1D1F] mt-8 text-center">શ્રી બરડાદેવ બાપા</h3>
-                    <p class="text-[#D97706] text-sm mt-2 font-bold tracking-widest">અમારા ઈષ્ટદેવ</p>
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#4A1D1F] mt-4 sm:mt-6 md:mt-8 text-center">શ્રી બરડાદેવ બાપા</h3>
+                    <p class="text-[#D97706] text-xs sm:text-sm mt-2 font-bold tracking-widest">અમારા ઈષ્ટદેવ</p>
                 </div>
 
                 <div class="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-64 h-80 p-2 bg-gradient-to-b from-[#D97706] to-[#4A1D1F] oval-frame transition-transform duration-500 group-hover:-translate-y-3">
+                    <div class="w-48 h-64 sm:w-56 sm:h-72 md:w-64 md:h-80 p-2 bg-gradient-to-b from-[#D97706] to-[#4A1D1F] oval-frame transition-transform duration-500 group-hover:-translate-y-3">
                         <img src="./images/popatbapu-img.png" alt="શ્રી શિવ કૈલાસધામ" class="w-full h-full object-cover oval-frame border-4 border-white" onerror="this.src='https://placehold.co/400x500/FDF5F2/4A1D1F?text=શ્રી+શિવ+કૈલાસધામ'">
                     </div>
-                    <h3 class="text-2xl font-bold text-[#4A1D1F] mt-8 text-center">શ્રી શિવ કૈલાસધામ</h3>
-                    <p class="text-[#D97706] text-sm mt-2 font-bold tracking-widest">પ્રાણપ્રતિષ્ઠા મૂર્તિ</p>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-[#4A1D1F] mt-4 sm:mt-6 md:mt-8 text-center">શ્રી શિવ કૈલાસધામ</h3>
+                    <p class="text-[#D97706] text-xs sm:text-sm mt-2 font-bold tracking-widest">પ્રાણપ્રતિષ્ઠા મૂર્તિ</p>
                 </div>
             </div>
 
-            <div class="mt-14 text-center max-w-4xl mx-auto p-8 bg-white shadow-xl rounded-2xl border-t-4 border-[#D97706]" data-aos="fade-up">
+            <div class="mt-8 sm:mt-12 md:mt-14 text-center max-w-4xl mx-auto p-4 sm:p-6 md:p-8 bg-white shadow-xl rounded-2xl border-t-4 border-[#D97706]" data-aos="fade-up">
                 <p class="text-lg md:text-xl text-slate-700 leading-loose mb-6">
                     આ ત્રિ-દિવસીય યજ્ઞ મહોત્સવ <strong class="text-[#4A1D1F]">મહંત શ્રી પોપટબાપા</strong> ના રૂડા આશીર્વાદ સાથે અને 
                     <strong class="text-[#4A1D1F]">મુખ્ય શાસ્ત્રી શ્રી રાકેશદાદા પંડયા (શ્રીરાધે)</strong> ના આચાર્યપદે સંપૂર્ણ શાસ્ત્રોકત વિધિ અનુસાર સંપન્ન થશે.
@@ -219,7 +205,7 @@
       </section>
     </div>
     <section
-      class="py-14 container mx-auto px-6 text-center"
+      class="py-8 sm:py-10 md:py-14 container mx-auto px-4 sm:px-6 text-center"
       data-aos="fade-up"
     >
       <div class="max-w-4xl mx-auto">
@@ -236,8 +222,8 @@
         </p>
       </div>
     </section>
-    <section id="schedule" class="py-20 bg-white">
-      <div class="container mx-auto px-6">
+    <section id="schedule" class="py-12 sm:py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6">
         <div class="text-center mb-16" data-aos="fade-up">
           <h2 class="text-4xl font-bold text-[#4A1D1F] mb-4">
             ત્રિ-દિવસીય કાર્યક્રમ
@@ -245,9 +231,9 @@
           <div class="w-16 h-1 bg-[#D97706] mx-auto"></div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="grid md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           <div
-            class="bg-[#FDF5F2] p-8 rounded-lg shadow-sm border-t-4 border-[#D97706]"
+            class="bg-[#FDF5F2] p-4 sm:p-6 md:p-8 rounded-lg shadow-sm border-t-4 border-[#D97706]"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -269,7 +255,7 @@
             </ul>
           </div>
           <div
-            class="bg-[#FDF5F2] p-8 rounded-lg shadow-sm border-t-4 border-[#D97706]"
+            class="bg-[#FDF5F2] p-4 sm:p-6 md:p-8 rounded-lg shadow-sm border-t-4 border-[#D97706]"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -291,7 +277,7 @@
             </ul>
           </div>
           <div
-            class="bg-[#FDF5F2] p-8 rounded-lg shadow-sm border-t-4 border-[#D97706]"
+            class="bg-[#FDF5F2] p-4 sm:p-6 md:p-8 rounded-lg shadow-sm border-t-4 border-[#D97706]"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -315,7 +301,7 @@
         </div>
       </div>
     </section>
-    <section id="cultural" class="py-24 bg-[#FDF5F2]">
+    <section id="cultural" class="py-12 sm:py-16 md:py-24 bg-[#FDF5F2]">
       <div class="container mx-auto px-6 text-center">
         <div class="mb-16" data-aos="fade-up">
           <span
@@ -327,7 +313,7 @@
           </h2>
           <div class="w-12 h-1 bg-[#D97706] mx-auto mt-6"></div>
         </div>
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="grid md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           <div
             class="bg-white p-2 rounded-lg shadow-sm group hover:shadow-xl transition-all duration-500"
             data-aos="fade-up"
@@ -336,17 +322,17 @@
               <img
                 src="./images/kangopi.png"
                 alt="Kaan Gopi"
-                class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-700"
               />
             </div>
-            <div class="p-8">
-              <h3 class="text-2xl font-bold text-[#4A1D1F] mb-4">
+            <div class="p-4 sm:p-6 md:p-8">
+              <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-[#4A1D1F] mb-3 sm:mb-4">
                 સુરશ્યામ કાનગોપી
               </h3>
-              <p class="text-[#D97706] font-bold mb-4">
+              <p class="text-xs sm:text-sm md:text-base text-[#D97706] font-bold mb-3 sm:mb-4">
                 ૧૧-૦૫-૨૦૨૬, રાત્રે ૦૯:૦૦
               </p>
-              <p class="text-slate-600 text-sm mb-6">
+              <p class="text-xs sm:text-sm text-slate-600 mb-4 sm:mb-6">
                 જગદિશભાઈ આહિર (ટીકરવાળા) તથા તેમની ટીમ દ્વારા ભવ્ય પ્રસ્તુતિ.
               </p>
             </div>
@@ -361,17 +347,17 @@
               <img
                 src="./images/ramatostav.png"
                 alt="Rasotsav"
-                class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-700"
               />
             </div>
-            <div class="p-8">
-              <h3 class="text-2xl font-bold text-[#4A1D1F] mb-4">
+            <div class="p-4 sm:p-6 md:p-8">
+              <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-[#4A1D1F] mb-3 sm:mb-4">
                 ભવ્ય રાસોત્સવ
               </h3>
-              <p class="text-[#D97706] font-bold mb-4">
+              <p class="text-xs sm:text-sm md:text-base text-[#D97706] font-bold mb-3 sm:mb-4">
                 ૧૨-૦૫-૨૦૨૬, રાત્રે ૦૭:૦૦ થી ૦૯:૦૦
               </p>
-              <p class="text-slate-600 text-sm mb-6">
+              <p class="text-xs sm:text-sm text-slate-600 mb-4 sm:mb-6">
                 કલાકાર શ્રીમતી કૃપાલીબેન પાર્થિવભાઈ વાઘેલા, (નેરૂલ, મુંબઈ) ના
                 સથવારે.
               </p>
@@ -387,17 +373,17 @@
               <img
                 src="./images/kalakar.png"
                 alt="Santvani"
-                class="w-full h-50 object-cover group-hover:scale-110 transition-transform duration-700"
+                class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-700"
               />
             </div>
-            <div class="p-8">
-              <h3 class="text-2xl font-bold text-[#4A1D1F] mb-4">
+            <div class="p-4 sm:p-6 md:p-8">
+              <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-[#4A1D1F] mb-3 sm:mb-4">
                 સંતવાણી ડાયરો
               </h3>
-              <p class="text-[#D97706] font-bold mb-4">
+              <p class="text-xs sm:text-sm md:text-base text-[#D97706] font-bold mb-3 sm:mb-4">
                 ૧૨-૦૫-૨૦૨૬, રાત્રે ૦૯:૩૦
               </p>
-              <p class="text-slate-600 text-sm mb-6">
+              <p class="text-xs sm:text-sm text-slate-600 mb-4 sm:mb-6">
                 કલાકાર પદ્મશ્રી એવોર્ડ સ્વ. કવિદાદનાં પુત્ર શ્રી જીતુદાનભાઈ ગઢવી
                 અને શ્રી કેતનભાઈ દેવળીયા.
               </p>
@@ -407,60 +393,59 @@
       </div>
     </section>    
     <section class="bg-[#FDF5F2] overflow-hidden">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col lg:flex-row gap-16 items-center">
-        <div class="md:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center order-2 md:order-1" data-aos="fade-right">
-          <span class="text-[#D97706] font-bold tracking-widest uppercase text-xs mb-4 block">
-            ભવ્ય ઇતિહાસ અને વારસો
-          </span>
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4A1D1F] leading-tight mb-6 font-serif">
-            દેવળીયા પરિવારનો <br /> ગૌરવશાળી ઇતિહાસ
-          </h2>
-          <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
-            પેઢીઓથી ચાલ્યો આવતો આપણો ભવ્ય વારસો, સંસ્કાર અને પરંપરાઓનો અનોખો સંગમ છે. આપણા પૂર્વજોએ સ્થાપેલા મૂલ્યો અને ધાર્મિક આસ્થાઓને આપણે આજે પણ એટલા જ ગૌરવથી જાળવી રાખી છે. આ વિડીયો દ્વારા આપણી જૂની યાદો અને સફરને વાગોળીએ.
-          </p>
-          <a href="#history-details" class="inline-block px-8 py-3 md:px-10 md:py-4 border-2 border-[#D97706] text-[#D97706] font-bold uppercase tracking-widest text-xs hover:bg-[#D97706] hover:text-white transition-all duration-300 w-max rounded">
-            વધુ માહિતી જુઓ
-          </a>
-        </div>
-        <div 
-          class="md:w-1/2 min-h-[350px] relative overflow-hidden order-1 md:order-2 cursor-pointer group"
-          onclick="openHistoryVideo()"
-          data-aos="fade-left"
-        >
-          <img 
-            src="./images/rituals-poster.png" 
-            alt="History Thumbnail" 
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center transition-colors group-hover:bg-black/30">
-            <div class="w-20 h-20 bg-[#D97706] rounded-full flex items-center justify-center text-white shadow-2xl transform transition-transform group-hover:scale-110">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 ml-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div class="md:w-1/2 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col justify-center order-2 md:order-1" data-aos="fade-right">
+            <span class="text-[#D97706] font-bold tracking-widest uppercase text-xs mb-4 block">
+              ભવ્ય ઇતિહાસ અને વારસો
+            </span>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4A1D1F] leading-tight mb-6 font-serif">
+              દેવળીયા પરિવારનો <br /> ગૌરવશાળી ઇતિહાસ
+            </h2>
+            <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
+              પેઢીઓથી ચાલ્યો આવતો આપણો ભવ્ય વારસો, સંસ્કાર અને પરંપરાઓનો અનોખો સંગમ છે. આપણા પૂર્વજોએ સ્થાપેલા મૂલ્યો અને ધાર્મિક આસ્થાઓને આપણે આજે પણ એટલા જ ગૌરવથી જાળવી રાખી છે. આ વિડીયો દ્વારા આપણી જૂની યાદો અને સફરને વાગોળીએ.
+            </p>
+            <a href="#history-details" class="inline-block px-8 py-3 md:px-10 md:py-4 border-2 border-[#D97706] text-[#D97706] font-bold uppercase tracking-widest text-xs hover:bg-[#D97706] hover:text-white transition-all duration-300 w-max rounded">
+              વધુ માહિતી જુઓ
+            </a>
           </div>
-        </div>       
+          <div
+            class="w-full md:w-1/2 min-h-[250px] sm:min-h-[300px] md:min-h-[350px] relative overflow-hidden order-1 md:order-2 cursor-pointer group"
+            onclick="openHistoryVideo()"
+            data-aos="fade-left"
+          >
+            <img
+              src="./images/rituals-poster.png"
+              alt="History Thumbnail"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center transition-colors group-hover:bg-black/30">
+              <div class="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-[#D97706] rounded-full flex items-center justify-center text-white shadow-2xl transform transition-transform group-hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>       
         </div> 
       </div>
     </section>
-    <div id="videoModal" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm opacity-0 transition-opacity duration-300">  
-      <button onclick="closeHistoryVideo()" class="absolute top-6 right-6 text-white hover:text-[#D97706] transition-colors z-10">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <div id="videoModal" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center p-2 sm:p-4 md:p-6 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+      <button onclick="closeHistoryVideo()" class="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 text-white hover:text-[#D97706] transition-colors z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
-      <div class="relative w-full max-w-5xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" id="videoContainer">
+      <div class="relative w-full max-w-3xl sm:max-w-4xl md:max-w-5xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" id="videoContainer">
         <video id="historyVideoPlayer" controls class="w-full h-full outline-none">
           <source src="./images/history.mp4" type="video/mp4" />
           તમારું બ્રાઉઝર વિડીયો પ્લેબેક સપોર્ટ કરતું નથી.
         </video>
       </div>
     </div>
-
-    <section id="gallery" class="py-24 bg-white">
-      <div class="container mx-auto px-6">
+    <section id="gallery" class="py-12 sm:py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4 sm:px-6">
         <div class="text-center mb-16" data-aos="fade-up">
           <span
             class="text-[#D97706] font-bold tracking-widest uppercase text-xs mb-4 block"
@@ -474,7 +459,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div
-            class="relative overflow-hidden group h-72"
+            class="relative overflow-hidden group h-48 sm:h-56 md:h-72"
             data-aos="zoom-in"
             data-aos-delay="100"
           >
@@ -485,7 +470,7 @@
             />
           </div>
           <div
-            class="relative overflow-hidden group h-72 md:col-span-2"
+            class="relative overflow-hidden group h-48 sm:h-56 md:h-72 md:col-span-2"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
@@ -496,7 +481,7 @@
             />
           </div>
           <div
-            class="relative overflow-hidden group h-72"
+            class="relative overflow-hidden group h-48 sm:h-56 md:h-72"
             data-aos="zoom-in"
             data-aos-delay="300"
           >
@@ -507,7 +492,7 @@
             />
           </div>
           <div
-            class="relative overflow-hidden group h-72"
+            class="relative overflow-hidden group h-48 sm:h-56 md:h-72"
             data-aos="zoom-in"
             data-aos-delay="400"
           >
@@ -518,7 +503,7 @@
             />
           </div>
           <div
-            class="relative overflow-hidden group h-72"
+            class="relative overflow-hidden group h-48 sm:h-56 md:h-72"
             data-aos="zoom-in"
             data-aos-delay="500"
           >
@@ -531,9 +516,9 @@
         </div>
       </div>
     </section>
-    <section id="donation" class="py-24 bg-[#FDF5F2]">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col lg:flex-row gap-16 items-center">
+    <section id="donation" class="py-12 sm:py-16 md:py-24 bg-[#FDF5F2]">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-16 items-center">
           <div class="lg:w-1/2" data-aos="fade-right">
             <span class="text-[#D97706] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">સેવા કાર્ય</span>
             <h2 class="text-4xl md:text-5xl font-bold text-[#4A1D1F] leading-tight mb-5">
@@ -546,7 +531,7 @@
             </p>
 
             <!-- Bank details card -->
-            <div class="bg-white rounded-xl border-l-4 border-[#D97706] shadow-md p-6 mb-5">
+            <div class="bg-white rounded-xl border-l-4 border-[#D97706] shadow-md p-4 sm:p-6 mb-4 sm:mb-5">
               <h4 class="font-bold text-[#4A1D1F] mb-4 uppercase tracking-wider text-sm flex items-center gap-2">
                 <span class="inline-block w-2 h-2 rounded-full bg-[#D97706]"></span>
                 બેંક ખાતાની વિગત
@@ -572,7 +557,7 @@
             </div>
 
             <!-- Blessing note -->
-            <div class="bg-[#4A1D1F] text-white rounded-xl px-6 py-4 flex items-start gap-3">
+            <div class="bg-[#4A1D1F] text-white rounded-xl px-4 sm:px-6 py-3 sm:py-4 flex items-start gap-3">
               <img src="./images/havan.png" alt="" class="h-8 w-auto shrink-0 mt-0.5 opacity-90" />
               <p class="text-sm text-amber-100 leading-relaxed">
                 આ પુણ્ય કાર્યમાં સહભાગ બની ઈશ્વરના આશીર્વાદ પ્રાપ્ત કરો. આપનો દરેક ફાળો આ મહોત્સવને દિવ્ય બનાવશે.
@@ -591,7 +576,7 @@
               </div>
 
               <!-- Text content -->
-              <div class="px-7 pb-8 -mt-6 relative z-10">
+              <div class="px-4 sm:px-6 md:px-7 pb-6 sm:pb-8 -mt-4 sm:-mt-6 relative z-10">
                 <span class="inline-block px-4 py-1 bg-[#D97706] text-white text-[11px] font-bold tracking-[0.2em] uppercase rounded-full mb-4">
                   મુખ્ય યજમાન
                 </span>
@@ -616,8 +601,8 @@
           </div>
       </div>
     </section>
-    <section class="bg-white py-24 text-center border-b border-slate-100">
-      <div class="container mx-auto px-6 max-w-4xl" data-aos="fade-up">
+    <section class="bg-white py-12 sm:py-16 md:py-24 text-center border-b border-slate-100">
+      <div class="container mx-auto px-4 sm:px-6 max-w-4xl" data-aos="fade-up">
         <h2 class="text-4xl font-bold text-[#4A1D1F] mb-6">
           ભાવભર્યું નિમંત્રણ
         </h2>
@@ -626,7 +611,7 @@
           ભાવભર્યું નિમંત્રણ છે. પરિવારની બહેન-દિકરીઓને આ પ્રસંગે પધારવા ખાસ
           આમંત્રણ છે.
         </p>
-        <form class="flex flex-col md:flex-row gap-4 justify-center">
+        <form class="flex flex-col md:flex-row gap-3 sm:gap-4 justify-center">
           <input
             type="text"
             placeholder="તમારું નામ દાખલ કરો"
@@ -639,15 +624,14 @@
           />
           <button
             type="button"
-            class="px-8 py-4 bg-[#4A1D1F] text-white font-bold rounded hover:bg-[#D97706] transition w-full md:w-auto text-lg"
+            class="px-6 sm:px-8 py-3 sm:py-4 bg-[#4A1D1F] text-white font-bold rounded hover:bg-[#D97706] transition w-full md:w-auto text-base sm:text-lg"
           >
             હાજરી નોંધાવો
           </button>
         </form>
       </div>
     </section>
-
-    <footer id="trust" class="bg-slate-900 text-slate-300 py-16">
+    <footer id="trust" class="bg-slate-900 text-slate-300 py-8 sm:py-12 md:py-16">
       <div class="container mx-auto px-6 text-center">
         <div class="border-t border-slate-700 pt-8 opacity-60 text-sm">
           <p>ક્ષમા-યાચના: કોઈ ક્ષતિ રહી ગયેલ હોય ઉદારદિલ રાખી દરગુજર કરશો...</p>
