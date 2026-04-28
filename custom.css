@@ -24,10 +24,10 @@
 /* Custom scrollbar */
 .custom-scrollbar::-webkit-scrollbar { width: 5px; }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #D97706, #4A1D1F);
+  background: linear-gradient(to bottom, #E65100, #3E2723);
   border-radius: 3px;
 }
-.custom-scrollbar::-webkit-scrollbar-track { background: #FEF4E0; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #FFF8E1; }
 
 /* Menu bar for hamburger */
 .menu-bar {
@@ -62,7 +62,7 @@ header div a[href^="#"]:not(.logo-link)::after {
   transform: translateX(-50%);
   width: 0;
   height: 1.5px;
-  background: #D97706;
+  background: #E65100;
   transition: width 0.28s ease;
   border-radius: 2px;
 }
@@ -70,7 +70,7 @@ header div a[href^="#"]:not(.logo-link):hover::after { width: 100%; }
 
 /* Swiper 11 pagination — set via CSS variables (Swiper reads these internally) */
 .heroSwiper {
-  --swiper-pagination-color: #D97706;
+  --swiper-pagination-color: #E65100;
   --swiper-pagination-bullet-size: 12px;
   --swiper-pagination-bullet-width: 12px;
   --swiper-pagination-bullet-height: 12px;
