@@ -83,8 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (wrapper && totalPages > 0) {
     const setWrapperHeight = function () {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
-      const baseVh = isMobile ? 88 : 105;
-      const perPageVh = isMobile ? 13 : 18;
+      const baseVh = isMobile ? 110 : 130;
+      const perPageVh = isMobile ? 20 : 30;
       const computedVh = baseVh + Math.max(0, totalPages - 1) * perPageVh;
       wrapper.style.height = computedVh + "vh";
     };
