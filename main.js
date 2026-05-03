@@ -102,6 +102,22 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", setWrapperHeight);
   }
 
+  if (pageFlip && flipbookEl) {
+    flipbookEl.addEventListener("click", function (e) {
+      if (!isMobileViewport()) return;
+
+      const rect = flipbookEl.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const goPrev = clickX < rect.width * 0.35;
+
+      if (goPrev) {
+        pageFlip.flipPrev();
+      } else {
+        pageFlip.flipNext();
+      }
+    });
+  }
+
   window.addEventListener("scroll", function () {
     if (!pageFlip || !wrapper) return;
     if (isMobileViewport()) return;
