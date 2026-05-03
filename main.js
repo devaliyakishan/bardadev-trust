@@ -1,14 +1,18 @@
 let pageFlip;
 let flipLock = false;
 
-document.addEventListener("DOMContentLoaded", function () {  
+document.addEventListener("DOMContentLoaded", function () {
   // Swiper Hero Slider
   if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
     new Swiper(".heroSwiper", {
       loop: true,
       effect: "fade",
       autoplay: { delay: 4000, disableOnInteraction: false },
-      pagination: { el: ".swiper-pagination", clickable: true, type: "bullets" },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        type: "bullets",
+      },
     });
   }
 
@@ -56,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let pageFlip;
   // 1. Declare the flipLock variable
-  let flipLock = false; 
+  let flipLock = false;
 
   if (flipbookEl) {
     pageFlip = new St.PageFlip(flipbookEl, {
@@ -71,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       showCover: true,
       mobileScrollSupport: false,
       usePortrait: true,
-      flippingTime: 800 // Explicitly set animation time (milliseconds)
+      flippingTime: 800, // Explicitly set animation time (milliseconds)
     });
     pageFlip.loadFromHTML(pagesList);
   }
@@ -79,13 +83,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const wrapper = document.getElementById("kankotri-scroll-wrapper");
   const progressBar = document.getElementById("flip-progress-bar");
   const hint = document.getElementById("flip-scroll-hint");
+  const isMobileViewport = () =>
+    window.matchMedia("(max-width: 768px)").matches;
+
+  if (wrapper && totalPages > 0) {
+    const setWrapperHeight = function () {
+      if (isMobileViewport()) {
+        wrapper.style.height = "auto";
+        return;
+      }
+
+      const computedVh = 100 + Math.max(0, totalPages - 1) * 1.6;
+      const clampedVh = Math.max(108, Math.min(computedVh, 118));
+      wrapper.style.height = clampedVh + "vh";
+    };
+
+    setWrapperHeight();
+    window.addEventListener("resize", setWrapperHeight);
+  }
 
   window.addEventListener("scroll", function () {
     if (!pageFlip || !wrapper) return;
+    if (isMobileViewport()) return;
 
     const rect = wrapper.getBoundingClientRect();
-    const wrapperScrollHeight = wrapper.offsetHeight - window.innerHeight;
-    
+    const wrapperScrollHeight = Math.max(
+      wrapper.offsetHeight - window.innerHeight,
+      1,
+    );
+
     // Calculate scrolled distance
     let scrolled = -rect.top;
 
@@ -97,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update Progress Bar
     if (progressBar) {
-      progressBar.style.width = (progress * 100) + "%";
+      progressBar.style.width = progress * 100 + "%";
     }
 
     // Hide the hint smoothly once they start scrolling
@@ -115,58 +141,58 @@ document.addEventListener("DOMContentLoaded", function () {
     // Trigger the flip if the page has changed and we aren't locked
     if (targetPage !== currentPage && !flipLock) {
       flipLock = true;
-      
+
       try {
         // Direct flip works best when we control the lock properly
         pageFlip.flip(targetPage);
       } catch (e) {
         console.warn("Flip interrupted", e);
       }
-      
+
       // 4. Lock the scroll-trigger until the animation finishes
       // Match this timeout to the 'flippingTime' in your config (800ms)
       setTimeout(function () {
         flipLock = false;
-      }, 800); 
+      }, 800);
     }
   });
 
   // Video modal functionality
-  const modal = document.getElementById('videoModal');
-  const videoPlayer = document.getElementById('historyVideoPlayer');
-  const videoContainer = document.getElementById('videoContainer');
+  const modal = document.getElementById("videoModal");
+  const videoPlayer = document.getElementById("historyVideoPlayer");
+  const videoContainer = document.getElementById("videoContainer");
 
-  window.openHistoryVideo = function() {
+  window.openHistoryVideo = function () {
     if (!modal || !videoPlayer || !videoContainer) return;
-    
+
     // Show modal
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+
     // Tiny delay to allow CSS transitions to work
     setTimeout(() => {
-      modal.classList.remove('opacity-0');
-      videoContainer.classList.remove('scale-95');
-      videoContainer.classList.add('scale-100');
+      modal.classList.remove("opacity-0");
+      videoContainer.classList.remove("scale-95");
+      videoContainer.classList.add("scale-100");
     }, 10);
 
     // Play the video with sound!
     videoPlayer.play();
   };
 
-  window.closeHistoryVideo = function() {
+  window.closeHistoryVideo = function () {
     if (!modal || !videoPlayer || !videoContainer) return;
-    
+
     // Animate out
-    modal.classList.add('opacity-0');
-    videoContainer.classList.remove('scale-100');
-    videoContainer.classList.add('scale-95');
+    modal.classList.add("opacity-0");
+    videoContainer.classList.remove("scale-100");
+    videoContainer.classList.add("scale-95");
 
     // Wait for animation to finish before hiding and pausing
     setTimeout(() => {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+
       // Pause and reset video
       videoPlayer.pause();
       videoPlayer.currentTime = 0;
@@ -175,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Close modal if user clicks outside the video
   if (modal) {
-    modal.addEventListener('click', function(e) {
+    modal.addEventListener("click", function (e) {
       if (e.target === modal) {
         window.closeHistoryVideo();
       }
