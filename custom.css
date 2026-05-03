@@ -682,11 +682,11 @@ body {
 }
 #kankotri-scroll-wrapper {
   position: relative;
-  height: 340vh;
+  height: 500vh;
 }
 @media (max-width: 768px) {
   #kankotri-scroll-wrapper {
-    height: 250vh;
+    height: 300vh;
   }
 }
 #kankotri-book {
