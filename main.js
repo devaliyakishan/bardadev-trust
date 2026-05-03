@@ -80,11 +80,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressBar = document.getElementById("flip-progress-bar");
   const hint = document.getElementById("flip-scroll-hint");
 
+  if (wrapper && totalPages > 0) {
+    const setWrapperHeight = function () {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      const baseVh = isMobile ? 88 : 105;
+      const perPageVh = isMobile ? 13 : 18;
+      const computedVh = baseVh + Math.max(0, totalPages - 1) * perPageVh;
+      wrapper.style.height = computedVh + "vh";
+    };
+
+    setWrapperHeight();
+    window.addEventListener("resize", setWrapperHeight);
+  }
+
   window.addEventListener("scroll", function () {
     if (!pageFlip || !wrapper) return;
 
     const rect = wrapper.getBoundingClientRect();
-    const wrapperScrollHeight = wrapper.offsetHeight - window.innerHeight;
+    const wrapperScrollHeight = Math.max(wrapper.offsetHeight - window.innerHeight, 1);
     
     // Calculate scrolled distance
     let scrolled = -rect.top;

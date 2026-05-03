@@ -12,6 +12,11 @@
   --header-divider: rgba(74, 42, 28, 0.14);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Home page visual system */
 .home-page {
   background:
@@ -184,7 +189,7 @@
   background: linear-gradient(90deg, #4e1e22 0%, #61221d 45%, #8f4314 100%);
   color: #ffe1b6;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px 14px;
   font-weight: 700;
   font-size: 13px;
@@ -195,11 +200,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 0;
   gap: 6px;
+  text-align: center;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 .hero-info-strip span {
   display: inline-block;
   font-size: 14px;
+}
+@media (max-width: 1023px) {
+  .hero-info-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 .home-hero .swiper-pagination {
   bottom: 56px !important;
@@ -209,10 +223,14 @@
     bottom: 72px !important;
   }
   .hero-info-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px 10px;
+    grid-template-columns: 1fr;
+    gap: 6px;
     font-size: 11px;
     padding: 8px 10px;
+  }
+  .hero-info-strip div {
+    justify-content: flex-start;
+    text-align: left;
   }
   .hero-info-strip span {
     font-size: 12px;
@@ -493,12 +511,14 @@
 }
 .footer-bottom {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: center;
+  gap: 6px;
   padding: 12px 0 6px;
   font-size: 13px;
   color: rgba(245, 219, 194, 0.72);
+  text-align: center;
 }
 .back-to-top {
   position: fixed;
@@ -612,6 +632,24 @@
   padding: 10px 14px;
 }
 
+/* Committee page row responsiveness */
+.trustee-card,
+.executive-item {
+  gap: 10px;
+}
+.trustee-card > div,
+.executive-item span:first-child {
+  min-width: 0;
+}
+.trustee-card p,
+.executive-item span:first-child {
+  overflow-wrap: anywhere;
+}
+.trustee-card > span,
+.executive-item span:last-child {
+  flex-shrink: 0;
+}
+
 /* Oval frame glow on hover */
 .group:hover .oval-frame {
   box-shadow:
@@ -644,11 +682,11 @@
 }
 #kankotri-scroll-wrapper {
   position: relative;
-  height: 500vh;
+  height: 260vh;
 }
 @media (max-width: 768px) {
   #kankotri-scroll-wrapper {
-    height: 300vh;
+    height: 185vh;
   }
 }
 #kankotri-book {
@@ -697,6 +735,31 @@
 }
 
 @media (max-width: 640px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .trustees-section h3,
+  .executive-section h3,
+  .amarvel-title {
+    line-height: 1.25;
+  }
+  .trustee-card,
+  .executive-item {
+    flex-wrap: wrap;
+  }
+  .trustee-card > span,
+  .executive-item span:last-child {
+    font-size: 12px;
+    width: 100%;
+    text-align: left;
+  }
+  .executive-section .grid {
+    gap: 10px;
+  }
+  .amarvel-list {
+    gap: 8px;
+  }
   .amarvel-kicker {
     letter-spacing: 0.14em;
     font-size: 10px;
@@ -736,8 +799,9 @@
   }
   .footer-bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     font-size: 12px;
+    text-align: center;
   }
 }
 
