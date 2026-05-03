@@ -3,15 +3,19 @@ let flipLock = false;
 
 document.addEventListener("DOMContentLoaded", function () {  
   // Swiper Hero Slider
-  new Swiper(".heroSwiper", {
-    loop: true,
-    effect: "fade",
-    autoplay: { delay: 4000, disableOnInteraction: false },
-    pagination: { el: ".swiper-pagination", clickable: true, type: "bullets" },
-  });
+  if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
+    new Swiper(".heroSwiper", {
+      loop: true,
+      effect: "fade",
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      pagination: { el: ".swiper-pagination", clickable: true, type: "bullets" },
+    });
+  }
 
   // Animate On Scroll
-  AOS.init({ duration: 1000, once: true, offset: 100 });
+  if (typeof AOS !== "undefined") {
+    AOS.init({ duration: 1000, once: true, offset: 100 });
+  }
 
   // Mobile menu toggle
   (function () {
@@ -19,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const menu = document.getElementById("mobile-menu");
     if (!btn || !menu) return;
     const bars = btn.querySelectorAll(".menu-bar");
+    if (bars.length < 3) return;
 
     function openMenu() {
       menu.classList.remove("hidden");

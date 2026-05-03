@@ -9,86 +9,50 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./custom.css" />
   </head>
-  <body class="home-page custom-scrollbar text-slate-800 font-serif" style="font-family: 'Gujarati Sangam MN', 'Shruti', serif;">
-    <header class="site-header home-header sticky top-0 w-full z-50">
-      <div class="header-top-strip hidden md:block">
-        <div class="container mx-auto px-6 header-top-inner">
-          <span class="header-top-title">જય શ્રી બારડાદેવ</span>
-          <div class="header-top-right">
-            <div class="header-social">
-              <a href="#" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.62.77-1.62 1.56V12h2.76l-.44 2.89h-2.32v6.99C18.34 21.12 22 16.99 22 12z"/></svg>
-              </a>
-              <a href="#" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.3 3.5 12 3.5 12 3.5s-7.3 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32.6 32.6 0 0 0 0 12a32.6 32.6 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c2 .5 9.3.5 9.3.5s7.3 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32.6 32.6 0 0 0 24 12a32.6 32.6 0 0 0-.5-5.8ZM9.6 15.5v-7l6.1 3.5-6.1 3.5Z"/></svg>
-              </a>
-              <a href="#" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm-.2 2A3.3 3.3 0 0 0 4 7.3v9.4A3.3 3.3 0 0 0 7.3 20h9.4a3.3 3.3 0 0 0 3.3-3.3V7.3A3.3 3.3 0 0 0 16.7 4H7.3ZM17.8 5.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.1a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8Z"/></svg>
-              </a>
-            </div>
-            <span class="header-lang">ગુજરાતી</span>
-          </div>
+  <body class="custom-scrollbar text-slate-800 font-serif" style="font-family: 'Gujarati Sangam MN', 'Shruti', serif;">
+    <header class="site-header sticky top-0 w-full z-50">
+      <!-- Desktop nav -->
+      <div class="site-nav-shell container mx-auto px-4 sm:px-6 py-1 text-xs sm:text-sm tracking-wide font-bold hidden md:flex items-center justify-between">
+        <div class="flex items-center gap-2 sm:gap-4">
+          <a href="#home" class="site-nav-link uppercase text-xs sm:text-sm">હોમ</a>
+          <a href="#schedule" class="site-nav-link uppercase text-xs sm:text-sm">કાર્યક્રમ</a>
         </div>
-      </div>
-
-      <div class="desktop-main-nav hidden md:block">
-        <div class="container mx-auto px-6">
-          <div class="desktop-nav-shell">
-            <div class="desktop-nav-side">
-              <a href="/" class="home-desktop-link active-link">હોમ</a>              
-              <a href="/#cultural" class="home-desktop-link">કાર્યક્રમો</a>              
-              <a href="/committee.html" class="home-desktop-link">ટ્રસ્ટી મંડળ</a>
-              <a href="/committee.html#amarvel" class="home-desktop-link">સંતો–મહંતોની અમરવેલ</a>
-            </div>
-
-            <a href="/" class="logo-link site-logo-link desktop-logo-link">
-              <img src="./images/logo.png" alt="Jay Bardadev" class="h-12 w-auto drop-shadow " />
-            </a>
-
-            <div class="desktop-nav-side justify-end">
-              <a href="/#gallery" class="home-desktop-link">ગેલેરી</a>
-              <a href="/#schedule" class="home-desktop-link">ઈવેન્ટ્સ</a>              
-              <a href="/#contact" class="home-desktop-link">સંપર્ક કરો</a>
-              <a href="/#donation" class="header-cta-btn">દાન કરો</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mobile-main-nav md:hidden">
-        <div class="mobile-top-mini px-3 py-1.5 flex items-center justify-between">
-          <span>જય શ્રી બારડાદેવ</span>
-          <span>ગુજરાતી</span>
-        </div>
-        <div class="site-mobile-top flex items-center justify-between px-3 sm:px-5 py-2">
-          <div class="w-8"></div>
-          <a href="/" class="logo-link site-logo-link flex-shrink-0 mobile-logo-link">
-            <img src="./images/logo.png" alt="Jay Bardadev" class="h-9 sm:h-11 w-auto" />
+        <div class="flex justify-center items-center">
+          <a href="#home" class="logo-link site-logo-link">
+            <img src="./images/logo.png" alt="Jay Bardadev" class="h-10 sm:h-12 md:h-14 w-auto drop-shadow" />
           </a>
-          <button id="mobile-menu-btn" aria-label="Toggle menu"
-            class="w-8 h-8 sm:w-10 sm:h-10 flex flex-col justify-center items-center gap-[5px] focus:outline-none">
-            <span class="menu-bar"></span>
-            <span class="menu-bar"></span>
-            <span class="menu-bar"></span>
-          </button>
+        </div>
+        <div class="flex items-center gap-2 sm:gap-4">
+          <a href="#cultural" class="site-nav-link uppercase text-xs sm:text-sm">સાંસ્કૃતિક</a>
+          <a href="#donation" class="site-nav-link uppercase text-xs sm:text-sm">અનુદાન</a>
+          <a href="committee.html" class="site-nav-link uppercase text-xs sm:text-sm">ટ્રસ્ટી મંડળ</a>
         </div>
       </div>
-
+      <!-- Mobile top bar -->
+      <div class="site-mobile-top md:hidden flex items-center justify-between px-3 sm:px-5 py-2">
+        <div class="w-8"></div>
+        <a href="#home" class="logo-link site-logo-link flex-shrink-0">
+          <img src="./images/logo.png" alt="Jay Bardadev" class="h-9 sm:h-11 w-auto" />
+        </a>
+        <button id="mobile-menu-btn" aria-label="Toggle menu"
+          class="w-8 h-8 sm:w-10 sm:h-10 flex flex-col justify-center items-center gap-[5px] focus:outline-none">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+      <!-- Mobile dropdown -->
       <nav id="mobile-menu" class="hidden md:hidden site-mobile-menu">
         <div class="flex flex-col px-4 sm:px-6 py-4 sm:py-5 gap-1 text-xs sm:text-sm font-bold tracking-widest uppercase">
-          <a href="#" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">હોમ</a>
-          <a href="/#cultural" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">કાર્યક્રમો</a>
-          <a href="/committee.html" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">ટ્રસ્ટી મંડળ</a>
-          <a href="/committee.html#amarvel" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">સંતો–મહંતોની અમરવેલ</a>
-          <a href="/#gallery" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">ગેલેરી</a>
-          <a href="/#schedule" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">ઈવેન્ટ્સ</a>
-          <a href="/#contact" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">સંપર્ક કરો</a>
-          <a href="/#donation" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">દાન</a>
-
+          <a href="#home" class="site-mobile-link py-2.5 px-1 rounded-md">હોમ</a>
+          <a href="#schedule" class="site-mobile-link py-2.5 px-1 rounded-md">કાર્યક્રમ</a>
+          <a href="#cultural" class="site-mobile-link py-2.5 px-1 rounded-md">સાંસ્કૃતિક</a>
+          <a href="#donation" class="site-mobile-link py-2.5 px-1 rounded-md">અનુદાન</a>
+          <a href="committee.html" class="site-mobile-link py-2.5 px-1 rounded-md">ટ્રસ્ટી મંડળ</a>
         </div>
       </nav>
     </header>
-    <section id="home" class="swiper heroSwiper home-hero">
+    <section id="home" class="swiper heroSwiper">
       <div class="swiper-wrapper">
         <div
           class="swiper-slide hero-slide h-[60vh] sm:h-[70vh] md:h-[90vh]"
@@ -96,7 +60,7 @@
         >
           <div class="hero-overlay"></div>
           <div
-            class="hero-content-shell relative text-center text-white p-4 sm:p-6"
+            class="relative text-center text-white p-4 sm:p-6"
             data-aos="zoom-in"
             data-aos-duration="1500"
           >
@@ -135,11 +99,6 @@
         </div>
       </div>
       <div class="swiper-pagination"></div>
-      <div class="hero-info-strip">
-        <div><span>🕉</span> સ્થાપના: ૨૦૧૦</div>
-        <div><span>📍</span> સ્થાન: સુત્રાપાડા, ગીર સોમનાથ</div>
-        <div><span>🕯</span> સેવા ક્ષેત્ર: સમાજ સેવા</div>        
-      </div>
     </section>
     <section class="pt-8 sm:pt-12 md:pt-16 pb-8 sm:pb-10 md:pb-12 bg-[#FFF8E1] relative overflow-hidden">
         <div class="container mx-auto px-4 sm:px-6 relative z-10">
@@ -246,7 +205,6 @@
       </section>
     </div>
     <section
-      id="about"
       class="py-8 sm:py-10 md:py-14 container mx-auto px-4 sm:px-6 text-center"
       data-aos="fade-up"
     >
@@ -506,7 +464,7 @@
             data-aos-delay="100"
           >
             <img
-              src="./images/image.png"
+              src="https://placehold.co/800x1000/4A1D1F/white?text=Shri+Ram+Darbar"
               alt="Shri Ram Darbar"
               class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
             />
@@ -517,7 +475,7 @@
             data-aos-delay="200"
           >
             <img
-              src="./images/banner2.png"
+              src="https://placehold.co/1200x800/8B4513/white?text=Shri+Bardadev+Bapa"
               alt="Ishtadev"
               class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
             />
@@ -528,7 +486,7 @@
             data-aos-delay="300"
           >
             <img
-              src="./images/image-1.png"
+              src="https://placehold.co/800x800/2D3748/white?text=Shiv+Kailashdham"
               alt="Mahadev"
               class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
             />
@@ -539,7 +497,7 @@
             data-aos-delay="400"
           >
             <img
-              src="./images/ramatostav.png"
+              src="https://placehold.co/800x800/D97706/white?text=Santvani"
               alt="Cultural Events"
               class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
             />
@@ -550,7 +508,7 @@
             data-aos-delay="500"
           >
             <img
-              src="./images/banner3.png"
+              src="https://placehold.co/800x800/718096/white?text=Sutrapada+Temple"
               alt="Temple"
               class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
             />
@@ -643,70 +601,47 @@
           </div>
       </div>
     </section>
-    <section id="contact" class="footer-join-strip">
-      <div class="container mx-auto px-4 sm:px-6 footer-join-inner">
-        <div>
-          <h3>અમારા સાથે જોડાયેલા રહો</h3>
-          <p>અમારા તાજા સમાચાર અને કાર્યક્રમોની માહિતી મેળવો.</p>
-        </div>
-        <form class="footer-join-form">
-          <input type="email" placeholder="તમારું ઈમેઇલ દાખલ કરો" />
-          <button type="button">સબસ્ક્રાઇબ કરો</button>
+    <section class="bg-white py-12 sm:py-16 md:py-24 text-center border-b border-slate-100">
+      <div class="container mx-auto px-4 sm:px-6 max-w-4xl" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-[#3E2723] mb-6">
+          ભાવભર્યું નિમંત્રણ
+        </h2>
+        <p class="text-slate-600 mb-10 text-lg">
+          આ મંગલમય અવસરને માણવા સર્વે રાઠોડ-દેવળીયા-ગાજરીયા પરિવારને પધારવા
+          ભાવભર્યું નિમંત્રણ છે. પરિવારની બહેન-દિકરીઓને આ પ્રસંગે પધારવા ખાસ
+          આમંત્રણ છે.
+        </p>
+        <form class="flex flex-col md:flex-row gap-3 sm:gap-4 justify-center">
+          <input
+            type="text"
+            placeholder="તમારું નામ દાખલ કરો"
+            class="px-6 py-4 rounded border border-slate-300 focus:outline-none focus:border-[#E65100] w-full md:w-1/3 text-lg font-medium"
+          />
+          <input
+            type="text"
+            placeholder="ગામ / શહેર"
+            class="px-6 py-4 rounded border border-slate-300 focus:outline-none focus:border-[#E65100] w-full md:w-1/3 text-lg font-medium"
+          />
+          <button
+            type="button"
+            class="px-6 sm:px-8 py-3 sm:py-4 bg-[#3E2723] text-white font-bold rounded hover:bg-[#E65100] transition w-full md:w-auto text-base sm:text-lg"
+          >
+            હાજરી નોંધાવો
+          </button>
         </form>
       </div>
     </section>
-
-    <footer id="trust" class="site-footer">
-      <div class="container mx-auto px-4 sm:px-6">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <div class="footer-brand-head">
-              <img src="./images/logo.png" alt="Shri Bardadev Trust" />
-              <h4>શ્રી બારડાદેવ ટ્રસ્ટ</h4>
-            </div>
-            <p>સેવા, સત્કર્મ અને સંસ્કાર દ્વારા સમાજમાં ભક્તિભાવ ફેલાવતું પવિત્ર કેન્દ્ર.</p>
-            <div class="footer-social">
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="YouTube">▶</a>
-              <a href="#" aria-label="Instagram">◎</a>
-              <a href="#" aria-label="WhatsApp">◉</a>
-            </div>
-          </div>
-
-          <div class="footer-col">
-            <h5>ઝડપી લિંક્સ</h5>
-            <a href="/">હોમ</a>
-            <a href="/#about">અમારા વિષે</a>
-            <a href="/#cultural">સેવા કાર્યો</a>
-            <a href="/#gallery">ગેલેરી</a>
-            <a href="/#contact">સંપર્ક કરો</a>
-          </div>
-
-          <div class="footer-col">
-            <h5>અમારી સેવાઓ</h5>
-            <a href="/#schedule">આગામી સેવા</a>
-            <a href="/#cultural">વિશેષ સેવા</a>
-            <a href="/#donation">દાન સેવા</a>
-            <a href="/#gallery">આરાધના ઝલક</a>
-            <a href="/#about">આમારો સંદેશ</a>
-          </div>
-
-          <div class="footer-col">
-            <h5>સંપર્ક માહિતી</h5>
-            <p>મુ. સુત્રાપાડા, જિ. ગીર સોમનાથ</p>
-            <p>+91 98765 43210</p>
-            <p>info@bardadevtrust.org</p>
-            <p>www.bardadevtrust.org</p>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>&copy; ૨૦૨૬ શ્રી બારડાદેવ ટ્રસ્ટ. સર્વાધિકાર સુરક્ષિત.</p>
-          <p>Designed &amp; Developed by Kishan</p>
+    <footer id="trust" class="bg-slate-900 text-slate-300 py-8 sm:py-12 md:py-16">
+      <div class="container mx-auto px-6 text-center">
+        <div class="border-t border-slate-700 pt-8 opacity-60 text-sm">
+          <p>ક્ષમા-યાચના: કોઈ ક્ષતિ રહી ગયેલ હોય ઉદારદિલ રાખી દરગુજર કરશો...</p>
+          <p class="mt-2">
+            &copy; ૨૦૨૬ શ્રી બરડાદેવ ટ્રસ્ટ. સર્વાધિકાર સુરક્ષિત.
+          </p>
+          <p class="mt-2">Designed &amp; Developed by Kishan</p>
         </div>
       </div>
     </footer>
-    <a href="/" class="back-to-top" aria-label="Back to top">↑</a>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
