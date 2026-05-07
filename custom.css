@@ -300,6 +300,10 @@ body {
   color: var(--header-accent);
   background-color: var(--header-accent-soft);
 }
+.site-mobile-link.active-link {
+  color: var(--header-accent);
+  background-color: var(--header-accent-soft);
+}
 .site-mobile-link:last-child { border-bottom: none; }
 
 /* Hero slide styles */
@@ -431,6 +435,21 @@ body {
   font-weight: 700;
   letter-spacing: 0.04em;
   cursor: pointer;
+}
+.footer-join-form button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+.footer-join-status {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffe6bf;
+  min-height: 20px;
+}
+.footer-join-status.is-error {
+  color: #ffe2e2;
 }
 
 .site-footer {

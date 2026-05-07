@@ -22,7 +22,7 @@
     <header class="site-header home-header sticky top-0 w-full z-50">
       <div class="header-top-strip hidden md:block">
         <div class="container mx-auto px-6 header-top-inner">
-          <span class="header-top-title">જય શ્રી બારડાદેવ</span>
+          <span class="header-top-title">જય શ્રી બરડાદેવ</span>
           <div class="header-top-right">
             <div class="header-social">
               <a href="#" aria-label="Facebook">
@@ -43,7 +43,7 @@
         <div class="container mx-auto px-6">
           <div class="desktop-nav-shell">
             <div class="desktop-nav-side">
-              <a href="/" class="home-desktop-link active-link">હોમ</a>              
+              <a href="/" class="home-desktop-link">હોમ</a>              
               <a href="/#cultural" class="home-desktop-link">કાર્યક્રમો</a>              
               <a href="/committee.html" class="home-desktop-link">ટ્રસ્ટી મંડળ</a>
               <a href="/committee.html#amarvel" class="home-desktop-link">સંતો–મહંતોની અમરવેલ</a>
@@ -62,7 +62,7 @@
       </div>
       <div class="mobile-main-nav md:hidden">
         <div class="mobile-top-mini px-3 py-1.5 flex items-center justify-between">
-          <span>જય શ્રી બારડાદેવ</span>
+          <span>જય શ્રી બરડાદેવ</span>
           <span>ગુજરાતી</span>
         </div>
         <div class="site-mobile-top flex items-center justify-between px-3 sm:px-5 py-2">
@@ -80,7 +80,7 @@
       </div>
       <nav id="mobile-menu" class="hidden md:hidden site-mobile-menu">
         <div class="flex flex-col px-4 sm:px-6 py-4 sm:py-5 gap-1 text-xs sm:text-sm font-bold tracking-widest uppercase">
-          <a href="#" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">હોમ</a>
+          <a href="/" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">હોમ</a>
           <a href="/#cultural" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">કાર્યક્રમો</a>
           <a href="/committee.html" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">ટ્રસ્ટી મંડળ</a>
           <a href="/committee.html#amarvel" class="site-mobile-link home-mobile-link py-2.5 px-2 rounded-md">સંતો–મહંતોની અમરવેલ</a>
@@ -563,9 +563,7 @@
         <div class="flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-16 items-center">
           <div class="lg:w-1/2" data-aos="fade-right">
             <span class="text-[#E65100] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">સેવા કાર્ય</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-[#3E2723] leading-tight mb-5">
-              મહાપ્રસાદ અને <br />મંદિર અનુદાન
-            </h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-[#3E2723] leading-tight mb-5">મહાપ્રસાદ અને મંદિર અનુદાન</h2>
             <p class="text-slate-600 mb-8 text-base leading-relaxed">
               તા: ૧૧ થી ૧૩ સવારે નાસ્તો, બપોર તથા રાત્રી ભોજન (મહાપ્રસાદ) અને
               શ્રીરામ તથા શિવ મંદિરનાં બાંધકામ માટે આપ સૌના સાથ અને સહકારની
@@ -649,10 +647,26 @@
           <h3>અમારા સાથે જોડાયેલા રહો</h3>
           <p>અમારા તાજા સમાચાર અને કાર્યક્રમોની માહિતી મેળવો.</p>
         </div>
-        <form class="footer-join-form">
-          <input type="email" placeholder="તમારું ઈમેઇલ દાખલ કરો" />
-          <button type="button">સબસ્ક્રાઇબ કરો</button>
+        <form
+          id="contact-subscribe-form"
+          class="footer-join-form"
+          action="https://formsubmit.co/info@bardadevtrust.online"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New Subscribe Request - Bardadev Trust" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <input
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="તમારું ઈમેઇલ દાખલ કરો"
+          />
+          <button type="submit">સબસ્ક્રાઇબ કરો</button>
         </form>
+        <p id="contact-subscribe-status" class="footer-join-status" aria-live="polite"></p>
       </div>
     </section>
     <footer id="trust" class="site-footer">
@@ -661,7 +675,7 @@
           <div class="footer-brand">
             <div class="footer-brand-head">
               <img src="./images/logo.png" alt="Shri Bardadev Trust" />
-              <h4>શ્રી બારડાદેવ ટ્રસ્ટ</h4>
+              <h4>શ્રી બરડાદેવ ટ્રસ્ટ</h4>
             </div>
             <p>સેવા, સત્કર્મ અને સંસ્કાર દ્વારા સમાજમાં ભક્તિભાવ ફેલાવતું પવિત્ર કેન્દ્ર.</p>
             <div class="footer-social">
@@ -695,12 +709,12 @@
             <p>મુ. સુત્રાપાડા, જિ. ગીર સોમનાથ</p>
             <p>+91 98765 43210</p>
             <p>info@bardadevtrust.org</p>
-            <p>www.bardadevtrust.org</p>
+            <p>www.baradadevtrust.online</p>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; ૨૦૨૬ શ્રી બારડાદેવ ટ્રસ્ટ. સર્વાધિકાર સુરક્ષિત.</p>
+          <p>&copy; ૨૦૨૬ શ્રી બરડાદેવ ટ્રસ્ટ. સર્વાધિકાર સુરક્ષિત.</p>
           <p>Designed &amp; Developed by Kishan</p>
         </div>
       </div>

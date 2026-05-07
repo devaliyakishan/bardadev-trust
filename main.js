@@ -51,6 +51,170 @@ document.addEventListener("DOMContentLoaded", function () {
       a.addEventListener("click", closeMenu);
     });
   })();
+
+  // Header active link state
+  (function () {
+    const navLinks = Array.from(
+      document.querySelectorAll(".home-desktop-link, .site-mobile-link"),
+    );
+    if (!navLinks.length) return;
+
+    const normalizePath = function (pathname) {
+      if (!pathname) return "/";
+      let path = pathname.replace(/\/+/g, "/");
+      if (path === "/index.html") return "/";
+      if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+      return path || "/";
+    };
+
+    const currentPath = normalizePath(window.location.pathname);
+
+    const linkMeta = navLinks
+      .map(function (link) {
+        const href = link.getAttribute("href");
+        if (!href) return null;
+
+        let url;
+        try {
+          url = new URL(href, window.location.origin);
+        } catch (err) {
+          return null;
+        }
+
+        const path = normalizePath(url.pathname);
+        const hash = url.hash || "";
+        const sectionId = hash ? hash.slice(1) : "";
+        const section = sectionId ? document.getElementById(sectionId) : null;
+
+        return { link, path, hash, section };
+      })
+      .filter(Boolean);
+
+    const samePathLinks = linkMeta.filter(function (item) {
+      return item.path === currentPath;
+    });
+
+    const sectionLinks = samePathLinks.filter(function (item) {
+      return item.hash && item.section;
+    });
+
+    const defaultLink =
+      samePathLinks.find(function (item) {
+        return !item.hash;
+      }) || null;
+
+    const setActive = function (targetLink) {
+      navLinks.forEach(function (link) {
+        link.classList.remove("active-link");
+        link.removeAttribute("aria-current");
+      });
+
+      if (!targetLink) return;
+      targetLink.classList.add("active-link");
+      targetLink.setAttribute("aria-current", "page");
+    };
+
+    const selectByHash = function () {
+      const currentHash = (window.location.hash || "").toLowerCase();
+      if (!currentHash) return null;
+
+      return (
+        samePathLinks.find(function (item) {
+          return item.hash.toLowerCase() === currentHash;
+        }) || null
+      );
+    };
+
+    const selectByScroll = function () {
+      if (!sectionLinks.length) return null;
+
+      const header = document.querySelector(".site-header");
+      const headerOffset = header ? header.offsetHeight + 20 : 120;
+      const scrollLine = window.scrollY + headerOffset;
+
+      let candidate = null;
+      sectionLinks.forEach(function (item) {
+        if (item.section.offsetTop <= scrollLine) {
+          candidate = item;
+        }
+      });
+
+      return candidate;
+    };
+
+    const updateActiveLink = function () {
+      const hashMatch = selectByHash();
+      if (hashMatch) {
+        setActive(hashMatch.link);
+        return;
+      }
+
+      const scrollMatch = selectByScroll();
+      if (scrollMatch) {
+        setActive(scrollMatch.link);
+        return;
+      }
+
+      setActive(defaultLink ? defaultLink.link : null);
+    };
+
+    updateActiveLink();
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    window.addEventListener("resize", updateActiveLink);
+    window.addEventListener("hashchange", updateActiveLink);
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        setTimeout(updateActiveLink, 0);
+      });
+    });
+  })();
+
+  // Contact subscribe form submit (AJAX)
+  (function () {
+    const form = document.getElementById("contact-subscribe-form");
+    const status = document.getElementById("contact-subscribe-status");
+    if (!form || !status) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const defaultBtnText = submitBtn ? submitBtn.textContent : "";
+
+    const setStatus = function (message, isError) {
+      status.textContent = message;
+      status.classList.toggle("is-error", Boolean(isError));
+    };
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      setStatus("મોકલી રહ્યું છે...", false);
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "મોકલાઈ રહ્યું...";
+      }
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/kishanimages2025@gmail.com", {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });        
+        const data = await response.json().catch(function () {return null;});
+        if (!response.ok || (data && data.success === false)) {
+          throw new Error("Submission failed");
+        }
+
+        form.reset();
+        setStatus("આભાર! તમારું ઇમેઇલ સફળતાપૂર્વક સબસ્ક્રાઇબ થયું.", false);
+      } catch (error) {
+        setStatus("હાલમાં સબમિટ થઈ શક્યું નથી. કૃપા કરીને ફરી પ્રયાસ કરો.", true);
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = defaultBtnText;
+        }
+      }
+    });
+  })();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
