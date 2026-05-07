@@ -103,18 +103,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (pageFlip && flipbookEl) {
-    flipbookEl.addEventListener("click", function (e) {
+    flipbookEl.addEventListener("pointerup", function (e) {
       if (!isMobileViewport()) return;
 
       const rect = flipbookEl.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const goPrev = clickX < rect.width * 0.35;
+      const tapX = e.clientX - rect.left;
+      const goPrev = tapX < rect.width * 0.35;
 
-      if (goPrev) {
-        pageFlip.flipPrev();
-      } else {
-        pageFlip.flipNext();
+      try {
+        if (goPrev) {
+          pageFlip.flipPrev("top");
+        } else {
+          pageFlip.flipNext("top");
+        }
+      } catch (err) {
+        if (goPrev) {
+          pageFlip.turnToPrevPage();
+        } else {
+          pageFlip.turnToNextPage();
+        }
       }
+
+      e.preventDefault();
     });
   }
 
