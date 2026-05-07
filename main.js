@@ -191,14 +191,18 @@ document.addEventListener("DOMContentLoaded", function () {
         submitBtn.disabled = true;
         submitBtn.textContent = "મોકલાઈ રહ્યું...";
       }
-
       try {
-        const response = await fetch("https://formsubmit.co/ajax/kishanimages2025@gmail.com", {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
-        });        
-        const data = await response.json().catch(function () {return null;});
+        const response = await fetch(
+          "https://formsubmit.co/ajax/kishanimages2025@gmail.com",
+          {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          },
+        );
+        const data = await response.json().catch(function () {
+          return null;
+        });
         if (!response.ok || (data && data.success === false)) {
           throw new Error("Submission failed");
         }
@@ -206,7 +210,10 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
         setStatus("આભાર! તમારું ઇમેઇલ સફળતાપૂર્વક સબસ્ક્રાઇબ થયું.", false);
       } catch (error) {
-        setStatus("હાલમાં સબમિટ થઈ શક્યું નથી. કૃપા કરીને ફરી પ્રયાસ કરો.", true);
+        setStatus(
+          "હાલમાં સબમિટ થઈ શક્યું નથી. કૃપા કરીને ફરી પ્રયાસ કરો.",
+          true,
+        );
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -247,8 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const wrapper = document.getElementById("kankotri-scroll-wrapper");
   const progressBar = document.getElementById("flip-progress-bar");
   const hint = document.getElementById("flip-scroll-hint");
-  const isMobileViewport = () =>
-    window.matchMedia("(max-width: 768px)").matches;
+  const isMobileViewport = () => window.matchMedia("(max-width: 768px)").matches;
 
   if (wrapper && totalPages > 0) {
     const setWrapperHeight = function () {
