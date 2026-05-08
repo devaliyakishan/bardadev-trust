@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ટ્રસ્ટી મંડળ | શ્રી બરડાદેવ ટ્રસ્ટી મંડળ</title>
+    <!-- Preconnect to CDN origins to reduce DNS + TLS latency -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <!-- Preload critical above-fold resources -->
+    <link rel="preload" href="./images/logo.png" as="image" />
+    <link rel="preload" href="./images/image.png" as="image" fetchpriority="high" />
+    <link rel="preload" href="./custom.css" as="style" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
@@ -89,6 +99,7 @@
                 src="./images/logo.png"
                 alt="Jay Bardadev"
                 class="h-12 w-auto drop-shadow"
+                fetchpriority="high" decoding="async"
               />
             </a>
             <div class="desktop-nav-side justify-end">
@@ -120,6 +131,7 @@
               src="./images/logo.png"
               alt="Jay Bardadev"
               class="h-9 sm:h-11 w-auto"
+              fetchpriority="high" decoding="async"
             />
           </a>
           <button
@@ -188,6 +200,7 @@
       <img
         src="./images/image.png"
         class="absolute inset-0 w-full h-full object-cover"
+        fetchpriority="high" decoding="async"
       />
       <div class="relative z-20 text-center text-white mt-10">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">
@@ -219,7 +232,7 @@
             <img
               src="./images/kanjibhai1.png"
               alt="કાનજીભાઈ"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105" loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-xl font-bold text-[#E06A53] mb-1">
@@ -240,7 +253,7 @@
             <img
               src="./images/arvindbhai1.png"
               alt="અરવિંદભાઈ"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105" loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-xl font-bold text-[#E06A53] mb-1">
@@ -261,7 +274,7 @@
             <img
               src="./images/manubhai1.png"
               alt="મનુભાઈ"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105" loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-xl font-bold text-[#E06A53] mb-1">
@@ -282,7 +295,7 @@
             <img
               src="./images/bhikhubhai1.png"
               alt="ભીખુભાઈ"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105" loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-xl font-bold text-[#E06A53] mb-1">
@@ -303,7 +316,7 @@
             <img
               src="./images/vijubhai.png"
               alt="વિજયભાઈ"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105" loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-xl font-bold text-[#E06A53] mb-1">
@@ -324,7 +337,7 @@
             <img
               src="./images/dineshbhai1.png"
               alt="દિનેશભાઈ"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105" loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-xl font-bold text-[#E06A53] mb-1">
@@ -345,7 +358,7 @@
             <img
               src="./images/jentibhai.png"
               alt="જેન્તીભાઈ"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105" loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-xl font-bold text-[#E06A53] mb-1">
@@ -366,7 +379,7 @@
             <img
               src="./images/lakhmanbhai1.png"
               alt="લક્ષ્મણભાઈ"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105" loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-xl font-bold text-[#E06A53] mb-1">
@@ -387,7 +400,7 @@
             <img
               src="./images/bhikhhu1.png"
               alt="ભીખુભાઈ"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-500 transform group-hover:scale-105" loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-xl font-bold text-[#E06A53] mb-1">
@@ -776,7 +789,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="footer-brand-head">
-              <img src="./images/logo.png" alt="Shri Bardadev Trust" />
+              <img src="./images/logo.png" alt="Shri Bardadev Trust" loading="lazy" decoding="async" />
               <h4>શ્રી બરડાદેવ ટ્રસ્ટ</h4>
             </div>
             <p>
@@ -826,7 +839,7 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./main.js"></script>
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="./main.js"></script>
   </body>
 </html>

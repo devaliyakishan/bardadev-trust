@@ -220,7 +220,7 @@ body {
 }
 @media (max-width: 767px) {
   .home-hero .swiper-pagination {
-    bottom: 72px !important;
+    bottom: 110px !important;
   }
   .hero-info-strip {
     grid-template-columns: 1fr;
@@ -240,7 +240,6 @@ body {
 /* Header palette */
 .site-header {
   background: linear-gradient(180deg, var(--header-bg-top), var(--header-bg-bottom));
-  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--header-border);
   box-shadow: 0 12px 28px rgba(74, 29, 31, 0.12);
 }
@@ -314,6 +313,7 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
+  will-change: transform;
 }
 .hero-overlay {
   background: linear-gradient(
@@ -542,7 +542,7 @@ body {
 .back-to-top {
   position: fixed;
   right: 14px;
-  bottom: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom, 16px));
   z-index: 70;
   width: 38px;
   height: 38px;
@@ -766,6 +766,9 @@ body {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
+  .footer-join-inner {
+    gap: 14px;
+  }
   .trustees-section h3,
   .executive-section h3,
   .amarvel-title {
@@ -830,6 +833,17 @@ body {
     font-size: 12px;
     text-align: center;
   }
+}
+
+/* Defer rendering of heavy below-fold sections */
+#schedule,
+#cultural,
+#gallery,
+#donation,
+#contact,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
 }
 
 /* Schedule day cards shimmer animation */

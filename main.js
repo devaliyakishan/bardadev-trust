@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Animate On Scroll
   if (typeof AOS !== "undefined") {
-    AOS.init({ duration: 1000, once: true, offset: 100 });
+    AOS.init({ duration: 700, once: true, offset: 80 });
   }
 
   // Mobile menu toggle
