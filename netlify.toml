@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/committee.html"
+  to = "/committee/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
