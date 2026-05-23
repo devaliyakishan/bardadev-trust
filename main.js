@@ -1,6 +1,3 @@
-let pageFlip;
-let flipLock = false;
-
 document.addEventListener("DOMContentLoaded", function () {
   // Swiper Hero Slider
   if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
