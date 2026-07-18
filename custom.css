@@ -802,9 +802,9 @@ textarea {
   box-shadow: var(--shadow-medium);
   padding: 18px;
   display: grid;
-  grid-template-columns: minmax(260px, 340px) 1fr;
+  grid-template-columns: minmax(300px, 440px) 1fr;
   gap: 32px;
-  align-items: stretch;
+  align-items: center;
 }
 
 .announcement-image {
@@ -822,7 +822,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 100px;
+  gap: 12px;
 }
 
 .announcement-title {
@@ -861,12 +861,12 @@ textarea {
 /* Pratham Poonam image in announcement */
 .punam-image {
   width: 100%;
-  max-width: 342px;
+  max-width: 440px;
   height: auto;
   object-fit: contain;
   border-radius: 18px;
   border: 1px solid rgba(122, 42, 31, 0.12);
-  align-self: start;
+  align-self: center;
 }
 
 .announcement button {
